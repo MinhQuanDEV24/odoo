@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_phong" model="ir.actions.act_window">
+        <field name="name">Quản lý phòng</field>
+        <field name="res_model">phong</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_nhanvien" model="ir.actions.act_window">
+        <field name="name">Quản lý nhân viên</field>
+        <field name="res_model">nhanvien</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_phong_tree" model="ir.ui.view">
+        <field name="name">phong.tree</field>
+        <field name="model">phong</field>
+        <field name="arch" type="xml">
+            <tree string="Phòng ban">
+                <field name="name"/>
+                <field name="depid"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_phong_form" model="ir.ui.view">
+        <field name="name">phong.form</field>
+        <field name="model">phong</field>
+        <field name="arch" type="xml">
+            <form string="Phòng ban">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="depid"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_nhanvien_tree" model="ir.ui.view">
+        <field name="name">nhanvien.tree</field>
+        <field name="model">nhanvien</field>
+        <field name="arch" type="xml">
+            <tree string="Nhân viên">
+                <field name="name"/>
+                <field name="empid"/>
+                <field name="gender"/>
+                <field name="phone"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_nhanvien_form" model="ir.ui.view">
+        <field name="name">nhanvien.form</field>
+        <field name="model">nhanvien</field>
+        <field name="arch" type="xml">
+            <form string="Nhân viên">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="empid"/>
+                        <field name="gender"/>
+                        <field name="phone"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="menu_root" name="Lê Minh Quân"/>
+
+    <menuitem
+        id="menu_phong"
+        name="Quản lý phòng"
+        parent="menu_root"
+        action="action_phong"
+    />
+
+    <menuitem
+        id="menu_nhanvien"
+        name="Quản lý nhân viên"
+        parent="menu_root"
+        action="action_nhanvien"
+    />
+</odoo>
